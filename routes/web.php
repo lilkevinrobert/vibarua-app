@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 Route::view('mwajiri','ajiri');
 Route::view('kazi','kazi');
+Route::view('disclaimer','disclaimer');
 
 Route::get('mawasiliano', function () {
     return view('mawasiliano');

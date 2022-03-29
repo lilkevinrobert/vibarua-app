@@ -10,7 +10,7 @@
             <div class="text-center">
                 <h1 class="text-white md:text-4xl mb-2 font-bold">NATAFUTA WAFANYAKAZI</h1>
                 <p class="font-semibold text-white">Kuna kazi zaidi ya 1,000 zinatafuta wachapakazi kila siku. Fungua akaunti yako leo uanze kufurahia kazi hizi kirahisi.</p>
-                <button type="button" class="font-medium tracking-wide mt-10 text-white bg-red-700 hover:bg-red-800 focus:ring-4  focus:outline-none focus:ring-red-500 font-medium rounded-lg text-l px-8 py-2.5 text-center mr-3 md:mr-0 ">NATAFUTA WAFANYAKAZI</button>
+                <a href="{{ url('mwajiri') }}"><button type="button" class="font-medium tracking-wide mt-10 text-white bg-red-700 hover:bg-red-800 focus:ring-4  focus:outline-none focus:ring-red-500 font-medium rounded-lg text-l px-8 py-2.5 text-center mr-3 md:mr-0 ">NATAFUTA WAFANYAKAZI</button></a>
             </div>
         </div>
     </div>
@@ -20,7 +20,8 @@
             <div class="text-center">
                 <h1 class="text-white md:text-4xl mb-2 font-bold">NATAFUTA KAZI</h1>
                 <p class="font-semibold text-white">Kuna kazi zaidi ya 1,000 zinatafuta wachapakazi kila siku. Fungua akaunti yako leo uanze kufurahia kazi hizi kirahisi.</p>
-                <button type="button" class="font-medium tracking-wide mt-10 text-white bg-red-700 hover:bg-red-800 focus:ring-4  focus:outline-none focus:ring-red-500 rounded-lg text-l px-8 py-2.5 text-center mr-3 md:mr-0 ">NATAFUTA KAZI</button>
+                <a href="{{ url('kazi') }}"><button type="button" class="font-medium tracking-wide mt-10 text-white bg-red-700 hover:bg-red-800 focus:ring-4  focus:outline-none focus:ring-red-500 rounded-lg text-l px-8 py-2.5 text-center mr-3 md:mr-0 ">NATAFUTA KAZI</button>
+                </a>
             </div>
         </div>
     </div>
@@ -262,6 +263,6 @@ The grid system images
 @endsection
 
 
-@section('grid')
-    @include('layouts.grid')
+@section('footer')
+    @include('layouts.footer')
 @endsection
