@@ -4,12 +4,11 @@
 @section('content')
 
 
-    <div class="container mx-auto w-3/5 md:px-20 px-4">
+    <div class="container mx-auto w-3/5 md:px-20 px-4 border border-red-300 py-4 rounded-lg">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center text-red-600">Karibu Vibarua ChapChap Utangaze ajira </h5>
-        <p class="font-normal text-gray-700 mb-10">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 
 
-    <form action="" method="post">
+    <form action="" method="post" class="pt-8">
 
         @csrf
         <div class="mb-6">
@@ -47,3 +46,8 @@
 </div>
 
 @endsection
+
+@section('footer')
+    @include('layouts.footer')
+@endsection
+

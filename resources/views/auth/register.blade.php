@@ -5,7 +5,7 @@
 @section('content')
 
     <div class=" p-4 max-w-sm mx-auto mt-4 mb-12 bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8  ">
-        <form class="space-y-4" action="/register">
+        <form class="space-y-4" action="{{ route('register') }}" method="post">
 
             @csrf
             <h5 class="text-xl font-semibold text-gray-900 text-center text-2xs text-red-600">Karibu, ujiunge nasi</h5>
@@ -41,15 +41,15 @@
             </div>
 
             <div>
-                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Thibitisha Neno siri</label>
-                <input type="password" name="cpassword" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required="">
-                @error('cpassword')
+                <label for="password_confirmation" class="block mb-2 text-sm font-medium text-gray-900 ">Thibitisha Neno siri</label>
+                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required="">
+                @error('password_confirmation')
                 <div class="text-red-600">{{ $message }}</div>
                 @enderror
             </div>
-            <button type="submit" class="w-full text-white bg-red-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Jiunge</button>
+            <button type="submit" class="w-full text-white bg-red-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">{{ __('Jiunge') }}</button>
             <div class="text-sm font-medium text-gray-500 ">
-                Je Tayari una akaunti? <a  class="text-blue-700 hover:underline " href="{{ url('login') }}">Ingia</a>
+                Je Tayari una akaunti? <a  class="text-blue-700 hover:underline " href="{{ url('login') }}">{{ __('Ingia') }}</a>
             </div>
         </form>
     </div>
