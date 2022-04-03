@@ -43,15 +43,15 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::authenticateUsing(function (Request $request) {
-            $user = User::where('email', $request->email)->first();
+            $user = User::where('email', $request->email)
+                ->orWhere('phone',$request->phone)->first();
+
 
             if ($user &&
                 Hash::check($request->password, $user->password)) {
                 return $user;
             }
         });
-
-
 
 
 

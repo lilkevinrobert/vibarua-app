@@ -28,100 +28,136 @@
 </div>
 
 
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-24 md:mt-24 ">
-    <div class="p-4">
-        <form action="">
-            <label for="table-search" class="sr-only">Tafuta</label>
-            <div class="relative mt-1">
-                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                    <svg class="w-5 h-5 text-gray-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-                </div>
-                <input type="text" id="table-search" name="query" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  " placeholder="Tafuta Kazi">
+
+    <h3 class="text-center text-red-600 font-semibold text-4xl mt-20">Tafuta nasi Kazi ya ndoto yako</h3>
+
+   {{-- <div class="flex flex-col  ">
+    <div class="overflow-x-auto sm:-mx-6 container mt-8 ">
+        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+                <table class="min-w-full">
+                    <thead class="bg-white border-b">
+                    <tr>
+                        <th scope="col" class="text-xl font-bold text-red-500 px-6 py-4 text-left">
+                            Kazi
+                        </th>
+                        <th scope="col" class="text-xl font-bold text-red-500 px-6 py-4 text-left">
+                            Mwajiri
+                        </th>
+                        <th scope="col" class="text-xl font-bold text-red-500 px-6 py-4 text-left">
+                            Eneo
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($kazi as $kz)
+                                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-grey-500">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $kz->kazi }}</td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><a href="#">{{ $kz->Mwajiri }}</a></td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        {{ $kz->eneo }}</td>
+                                </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
-        </form>
+        </div>
     </div>
-    <table class="w-full text-sm text-left text-gray-500 ">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
-        <tr>
-
-            <th scope="col" class="px-6 py-3">
-                Mwajiri
-            </th>
-            <th scope="col" class="px-6 py-3">
-                Kazi
-            </th>
-            <th scope="col" class="px-6 py-3">
-                Category
-            </th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">
-                Sliver
-            </td>
-
-            <td class="px-6 py-4 text-right">
-                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-            </td>
-        </tr>
+</div>--}}
 
 
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                Microsoft Surface Pro
-            </th>
-            <td class="px-6 py-4">
-                White
-            </td>
-            <td class="px-6 py-4">
-                Laptop PC
-            </td>
-            <td class="px-6 py-4">
-                $1999
-            </td>
-            <td class="px-6 py-4 text-right">
-                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-            </td>
-        </tr>
-        <tr class="bg-white border-b ">
-
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900  whitespace-nowrap">
-                Microsoft Surface Pro
-            </th>
-            <td class="px-6 py-4">
-                White
-            </td>
-            <td class="px-6 py-4">
-                Laptop PC
-            </td>
-            <td class="px-6 py-4">
-                $1999
-            </td>
-            <td class="px-6 py-4 text-right">
-                <a href="#" class="font-medium text-blue-600  hover:underline">Edit</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+<div class=" mt-10 container mx-auto w-1/2 ">
+    <form action="{{ route('web.search') }}" method="get" >
+        <input type="text" id="name" name="query" placeholder="Tafuta kazi" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+    </form>
 </div>
 
 
+{{--<div class="flex flex-col container mx-auto ">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+                <table class="min-w-full">
+                    <thead class="bg-white border-b">
+                    <tr>
+                        <th scope="col" class="text-xl font-bold text-red-500 px-6 py-4 text-left">
+                            Kazi
+                        </th>
+                        <th scope="col" class="text-xl font-bold text-red-500 px-6 py-4 text-left">
+                            Mwajiri
+                        </th>
+                        <th scope="col" class="text-xl font-bold text-red-500 px-6 py-4 text-left">
+                            Eneo
+                        </th>
+                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+
+                    <tbody>
+                    @foreach($kazi as $kz)
+                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-grey-500">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{ $kz->kazi }}</td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><a href="#">{{ $kz->Mwajiri }}</a></td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {{ $kz->eneo }}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>--}}
+<div class="flex flex-col container mx-auto">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+                <table class="min-w-full">
+                    <thead class="bg-white border-b">
+                    <tr>
+                        <th scope="col" class="text-medium font-bold text-red-600 px-6 py-4 text-left">
+                            Kazi
+                        </th>
+                        <th scope="col" class="text-sm font-bold text-red-600 px-6 py-4 text-left">
+                            Mwajiri
+                        </th>
+                        <th scope="col" class="text-sm font-bold text-red-600 px-6 py-4 text-left">
+                            Eneo
+                        </th>
+                        <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 text-center">
+
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($kazi as $kz)
+                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                            <td class="px-6 py-4 whitespace-nowrap text-md font-semibold hover:font-bold text-gray-900">{{ $kz->kazi }}</td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><a href="#">{{ $kz->Mwajiri }}</a></td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                {{ $kz->eneo }}</td>
+                            <td><a href="/mawasiliano/{{$kz->id}}" class="btn bg-red-500">Omba</a></td>
+                        </tr>
+                    @endforeach
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<h1 class="text-center text-red-600 font-bold pt-10 pb-3 text-4xl pb-10 mt-4">Aina ya Kazi Maarufu zipatikanazo</h1>
+
+
 {{--
-The grid system images
---}}
-
-
-
-
-<h1 class="text-center text-red-600 font-bold pt-10 pb-3 text-4xl pb-10 ">Aina ya Kazi Maarufu zipatikanazo</h1>
-
-
 <div class="grid lg:grid-cols-4 md:grid-cols-3  gap-2 mx-24">
 
     <div class="max-w-sm  bg-white rounded-lg shadow-md hover:shadow-lg ">
@@ -137,12 +173,15 @@ The grid system images
 
 
 
+
+
+
     <div class="max-w-sm  bg-white rounded-lg shadow-md hover:shadow-lg ">
         <a href="#">
             <img class="p-1 rounded-t-lg" src="{{asset('assets/images/Kilimo.jpg')}}" alt="Kilimo">
         </a>
         <div class="px-0 pb-0">
-            <a href="#">
+            <a href="/tafuta?query=kilimo">
                 <h5 class="text-lg text-center font-semibold tracking-wide text-red-600  text-gray-900 ">Kilimo</h5>
             </a>
         </div>
@@ -255,6 +294,333 @@ The grid system images
         </div>
     </div>
 
+</div>
+--}}
+
+<div class="container my-12 mx-auto px-4 md:px-12">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+
+        <!-- Column Kilimo-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=kilimo">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/Kilimo.jpg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Kilimo</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column Kinyozi-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=kiwandani">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/kiwandani1.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Viwandani</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column Ususi-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=msusi">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/msusi.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Ususi</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column Udereva-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=dereva">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/udereva.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Udereva</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column Dukani-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=dukani">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/dukani.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Dukani</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column Ufundi-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=ufundi">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/ufundi.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Ufundi</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column Ufugaji-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=ufugaji">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/ufugaji.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Ufugaji</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column Hotelini & Migahawani-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=hotelini">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/bar.jpg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Hotelini & Migahawani</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column Ofisini-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=ofisini">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/ofisini.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Ofisini</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+
+
+
+
+
+        <!-- Column Hotelini & Migahawani-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=hotelini">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/bar.jpg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Hotelini & Migahawani</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column Ofisini-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=ofisini">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/ofisini.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Ofisini</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column Ofisini-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=ofisini">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/ofisini.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Ofisini</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        {{--changes--}}
+        <!-- Column kinyozi-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=kinyozi">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/kinyozii.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Kinyozi</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column ujenzi-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=ujenzi">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/ujenzi.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Ujenzi</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+        <!-- Column Usafi-->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-lg">
+
+                <a href="/tafuta?query=usafi">
+                    <img alt="Placeholder" class="block h-auto w-full" src="{{asset('assets/images/usafi.jpeg')}}">
+                </a>
+
+                <footer class=" leading-none  p-1">
+
+                    <h5 class="text-center text-l tracking-wide font-bold text-red-600">Usafi</h5>
+                </footer>
+
+            </article>
+            <!-- END Article -->
+
+        </div>
+        <!-- END Column -->
+
+    </div>
 </div>
 
 

@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\MawasilianoController;
+use App\Http\Controllers\NyumbaniController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KaziController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,20 +19,19 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::view('mwajiri','ajiri');
-Route::view('kazi','kazi');
 Route::view('disclaimer','disclaimer');
 
-Route::get('mawasiliano', function () {
-    return view('mawasiliano');
-})->middleware('auth');
+Route::get('/mawasiliano/{id}',[MawasilianoController::class,'edit'])->middleware('auth');
 
+
+Route::get('mwajiri', [KaziController::class,'index']);
+Route::post('mwajiri', [KaziController::class,'store']);
+Route::get('kazi', [KaziController::class,'kazi']);
+Route::get('/',[NyumbaniController::class,'home']);
+Route::post('logout',[NyumbaniController::class,'logout']);
+Route::get('/tafuta',[KaziController::class,'search'])->name('web.search');
 
 
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
